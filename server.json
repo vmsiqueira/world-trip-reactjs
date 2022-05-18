@@ -1,3 +1,25 @@
 {
-  "continents": []
+  "continents": [
+    {
+      "id": "1",
+      "title": "",
+      "backgroundImage": "",
+      "abstract": "",
+      "countriesAmount": "",
+      "languagesAmount": "",
+      "citiesPlusHundred": {
+        "amount": "",
+        "mainCitiesPlusHundred": [
+          {
+            "cityName": "",
+            "countryName": "",
+            "cityCoverImage": "",
+            "countryIcon": ""
+          },
+          {}
+        ],
+        "infoCitiesPlusHundred": ""
+      }
+    }
+  ]
 }
