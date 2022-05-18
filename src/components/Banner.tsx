@@ -4,8 +4,8 @@ export function Banner() {
   return(
     <Box h="80" bgImage="background.png" bgSize="cover" bgPosition="center" bgRepeat="no-repeat">
       <Flex maxW="1120px" mx="auto" align="center" justify="space-between">
-        <Stack display="flex" flexDirection="column" gap="5">
-          <Heading as="h1" size="xl" fontWeight="medium" color="brand.white">
+        <Stack display="flex" flexDirection="column" justifyContent="center" gap="5">
+          <Heading as="h1" size="xl" lineHeight="54px" fontWeight="medium" color="brand.white">
             5 continentes, infinitas possibilidades.
           </Heading>
           <Text fontSize="xl" fontWeight="regular" color="brand.white">
