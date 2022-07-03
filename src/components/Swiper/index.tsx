@@ -7,8 +7,23 @@ import { SwiperItem } from "./SwiperItem";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useEffect, useState } from 'react';
+import { api } from '../../services/api';
+
+interface ContinentsProps {
+  id: number;
+  title: string;
+  abstract: string;
+  backgroundImage: string;
+}
 
 export function SwiperBanner() {
+  const [continentItem, setContinentItem] = useState<ContinentsProps[]>([]);
+
+  useEffect(() => {
+    api.get('continents').then(response => setContinentItem(response.data))
+  }, []);
+
   return(
     <Container maxW='1120px'>
       <Swiper
@@ -22,13 +37,16 @@ export function SwiperBanner() {
         onSwiper={(swiper) => console.log('swiper')}
       >
         <SwiperSlide>
-          <SwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <SwiperItem />
+          {continentItem.map(continent => {
+            return (
+              <SwiperItem 
+                key={continent.id} 
+                title={continent.title} 
+                abstract={continent.abstract}
+                backgroundImg={continent.backgroundImage}
+              />
+            )
+          })}
         </SwiperSlide>
       </Swiper>
     </Container>
